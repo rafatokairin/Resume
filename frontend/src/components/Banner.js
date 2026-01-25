@@ -66,7 +66,7 @@ export const Banner = () => {
                       link.click();
                     }}
                   >
-                    Download CV <ArrowRightCircle size={25} />
+                    Baixar CV <ArrowRightCircle size={25} />
                   </button>
               </div>}
             </TrackVisibility>
