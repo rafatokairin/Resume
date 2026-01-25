@@ -5,6 +5,12 @@ import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Contact = () => {
+  const API_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://resume-3qew.onrender.com"
+    : "http://localhost:5000";
+
+
   const formInitialDetails = {
     firstName: '',
     lastName: '',
@@ -29,7 +35,7 @@ export const Contact = () => {
     setButtonText("Enviando...");
 
     try {
-      const response = await fetch("http://localhost:5000/contact", {
+      const response = await fetch(`${API_URL}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
