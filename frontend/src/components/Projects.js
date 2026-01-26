@@ -15,7 +15,6 @@ import tcc from "../assets/img/project-card/tcc.png";
 import eda from "../assets/img/project-card/eda.png";
 import rafalift from "../assets/img/project-card/rafalift.png";
 import latex from "../assets/img/project-card/latex.png";
-
 import apirest from "../assets/img/project-card/apirest.png";
 import speedtest from "../assets/img/project-card/speedtest.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";

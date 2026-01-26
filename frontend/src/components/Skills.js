@@ -16,7 +16,7 @@ import postgresql from "../assets/img/skills/postgresql.svg";
 import mysql from "../assets/img/skills/mysql.svg";
 import linux from "../assets/img/skills/linux.svg";
 import git from "../assets/img/skills/git.svg";
-
+import postman from "../assets/img/skills/postman.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png";
@@ -50,7 +50,7 @@ export const Skills = () => {
               <h2>Experiência</h2>
 
               <p>
-                Experiência em PHP, Java, Python, C/C++, TypeScript, JavaScript e Dart, bancos de dados Oracle, PostgreSQL e MySQL, ambientes Linux e Git, além de frameworks como Adianti, Spring, Vue.js, Nuxt.js, React e Flutter.
+                Experiência em PHP, Java, Python, C/C++, TypeScript, JavaScript e Dart, bancos de dados Oracle, PostgreSQL e MySQL, ambientes Linux, Git e Postman, além de frameworks como Adianti, Spring, Vue.js, Nuxt.js, React e Flutter.
               </p>
 
               <Carousel
@@ -116,6 +116,11 @@ export const Skills = () => {
                 <div className="item">
                   <img src={git} alt="Git" />
                   <h5>Git</h5>
+                </div>
+
+                <div className="item">
+                  <img src={postman} alt="Postman" />
+                  <h5>Postman</h5>
                 </div>
 
                 <div className="item">
