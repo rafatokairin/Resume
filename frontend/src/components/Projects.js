@@ -17,7 +17,6 @@ import rafalift from "../assets/img/project-card/rafalift.png";
 import latex from "../assets/img/project-card/latex.png";
 import apirest from "../assets/img/project-card/apirest.png";
 import speedtest from "../assets/img/project-card/speedtest.png";
-import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { ProjectCarousel } from "./ProjectCarousel";
@@ -171,43 +170,62 @@ export const Projects = () => {
 
   return (
     <section className="project" id="projects">
-      <Container>
-        <Row>
-          <Col size={12}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>Projetos</h2>
-                  <p>
-                    Conjunto de projetos desenvolvidos a partir de experiências profissionais,
-                    pesquisas científicas e da minha formação acadêmica, envolvendo engenharia
-                    de software, ciência de dados, inteligência artificial e sistemas computacionais.
-                  </p>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center">
-                      <Nav.Item><Nav.Link eventKey="first">Profissional</Nav.Link></Nav.Item>
-                      <Nav.Item><Nav.Link eventKey="second">Pesquisa</Nav.Link></Nav.Item>
-                      <Nav.Item><Nav.Link eventKey="third">Acadêmico</Nav.Link></Nav.Item>
-                    </Nav>
-                    <Tab.Content className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                      <Tab.Pane eventKey="first">
-                        <ProjectCarousel projects={projects.filter(p => p.category === "professional")} />
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="second">
-                        <ProjectCarousel projects={projects.filter(p => p.category === "research")} />
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="third">
-                        <ProjectCarousel projects={projects.filter(p => p.category === "academic")} />
-                      </Tab.Pane>
-                    </Tab.Content>
-                  </Tab.Container>
-                </div>
-              }
-            </TrackVisibility>
-          </Col>
-        </Row>
-      </Container>
-      <img className="background-image-right" src={colorSharp2} alt="Background" />
-    </section>
+    <Container>
+      <Row>
+        <Col size={12}>
+          <div>
+            <h2>Projetos</h2>
+            <p>
+              Projetos desenvolvidos de experiências profissionais,
+              pesquisas científicas e da minha formação acadêmica, envolvendo engenharia
+              de software, ciência de dados, inteligência artificial e sistemas computacionais.
+            </p>
+
+            <Tab.Container id="projects-tabs" defaultActiveKey="first">
+              <Nav variant="pills" className="nav-pills mb-5 justify-content-center">
+                <Nav.Item>
+                  <Nav.Link eventKey="first" data-mobile="1">
+                    Profissional
+                  </Nav.Link>
+                </Nav.Item>
+
+                <Nav.Item>
+                  <Nav.Link eventKey="second" data-mobile="2">
+                    Pesquisa
+                  </Nav.Link>
+                </Nav.Item>
+
+                <Nav.Item>
+                  <Nav.Link eventKey="third" data-mobile="3">
+                    Acadêmico
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+
+              <Tab.Content>
+                <Tab.Pane eventKey="first">
+                  <ProjectCarousel
+                    projects={projects.filter(p => p.category === "professional")}
+                  />
+                </Tab.Pane>
+
+                <Tab.Pane eventKey="second">
+                  <ProjectCarousel
+                    projects={projects.filter(p => p.category === "research")}
+                  />
+                </Tab.Pane>
+
+                <Tab.Pane eventKey="third">
+                  <ProjectCarousel
+                    projects={projects.filter(p => p.category === "academic")}
+                  />
+                </Tab.Pane>
+              </Tab.Content>
+            </Tab.Container>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  </section>
   );
 };

@@ -19,7 +19,6 @@ import git from "../assets/img/skills/git.svg";
 import postman from "../assets/img/skills/postman.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import colorSharp from "../assets/img/color-sharp.png";
 
 export const Skills = () => {
   const responsive = {
@@ -157,12 +156,6 @@ export const Skills = () => {
           </div>
         </div>
       </div>
-      <img
-        className="background-image-left"
-        src={colorSharp}
-        alt=""
-        aria-hidden="true"
-      />
     </section>
   );
 };
