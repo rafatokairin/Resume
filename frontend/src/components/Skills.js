@@ -144,7 +144,7 @@ export const Skills = () => {
 
                 <div className="item">
                   <img src={reactjs} alt="React Native" />
-                  <h5>React Native</h5>
+                  <h5>React</h5>
                 </div>
 
                 <div className="item">
