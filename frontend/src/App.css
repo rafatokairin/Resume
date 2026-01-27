@@ -495,13 +495,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.4s ease;
 }
-
 /* Efeito hover com glow branco */
 .proj-imgbx:hover {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: #131315;
 }
-
 /* Overlay em gradiente preto/cinza */
 .proj-imgbx::before {
   content: "";
@@ -513,7 +511,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: 0.4s ease-in-out;
   z-index: 1;
 }
-
 .proj-imgbx:hover::before {
   opacity: 0.9;
 }
@@ -532,12 +529,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: 2;
   padding: 20px;
 }
-
 .proj-imgbx:hover .proj-txtx {
   top: 50%;
   opacity: 1;
 }
-
 /* Texto dos cards em branco */
 .proj-txtx h4 {
   font-size: 30px;
@@ -550,7 +545,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     0 0 10px rgba(255, 255, 255, 0.3);
   margin-bottom: 10px;
 }
-
 .proj-txtx span {
   font-style: italic;
   font-weight: 400;
@@ -561,14 +555,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     0 1px 3px rgba(0, 0, 0, 0.5),
     0 0 8px rgba(255, 255, 255, 0.2);
   display: block;
+  text-align: left;
 }
-
-/* Efeito de brilho extra para as imagens (opcional) */
+/* Efeito de brilho extra para as imagens */
 .proj-imgbx img {
   transition: all 0.5s ease;
   filter: brightness(0.85) contrast(1.1);
 }
-
 .proj-imgbx:hover img {
   filter: brightness(0.7) contrast(1.2);
   /* Cria um efeito de desfoque sutil */
@@ -617,6 +610,25 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project-slider .carousel-item {
   padding-left: 40px;
   padding-right: 40px;
+}
+.tech-stack-wrapper {
+  margin-top: 12px;
+}
+.tech-stack-grid {
+  display: flex;
+  flex-wrap: wrap; /* quebra linha quando não cabe */
+  gap: 6px;
+}
+.tech-stack-pill {
+  background-color: #131315;
+  color: white;
+  border: 1.5px solid #8fff00;
+  border-radius: 6px;
+  padding: 4px 8px;      /* espaço interno */
+  font-size: 0.65em;
+  font-weight: 500;
+  white-space: nowrap;   /* não quebra texto */
+  width: fit-content;    /* tamanho do conteúdo */
 }
 
 /************ Contact Css ************/
