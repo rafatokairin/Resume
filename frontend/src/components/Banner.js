@@ -1,86 +1,102 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header.svg";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
+import { ArrowRightCircle } from "react-bootstrap-icons";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const [index, setIndex] = useState(1);
-  const toRotate = [ "Dev Full-stack", "Cientista", "Mestrando" ];
+  const toRotate = ["Dev Full-stack", "Cientista", "Mestrando"];
   const period = 2000;
 
   useEffect(() => {
-    let ticker = setInterval(() => {
+    const ticker = setInterval(() => {
       tick();
     }, delta);
 
-    return () => { clearInterval(ticker) };
-  }, [text])
+    return () => clearInterval(ticker);
+  }, [text]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+    const i = loopNum % toRotate.length;
+    const fullText = toRotate[i];
+    const updatedText = isDeleting
+      ? fullText.substring(0, text.length - 1)
+      : fullText.substring(0, text.length + 1);
 
     setText(updatedText);
 
-    if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2);
-    }
-
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-      setIndex(prevIndex => prevIndex - 1);
       setDelta(period);
-    } else if (isDeleting && updatedText === '') {
+    } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setIndex(1);
       setDelta(500);
-    } else {
-      setIndex(prevIndex => prevIndex + 1);
     }
-  }
+  };
 
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
-              {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Bem vindo ao meu Currículo</span>
-                <h1>{`Oi! Eu sou Rafael Tokairin,`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Dev Full-stack", "Cientista", "Mestrando" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Sou Desenvolvedor Full-stack, mestrando e formado em Ciência da Computação pela Universidade Estadual de Londrina.</p>
-                  <button
-                    onClick={() => {
-                      const link = document.createElement("a");
-                      link.href = `${import.meta.env.BASE_URL}curriculoRafaelTokairin.pdf`;
-                      link.download = "curriculoRafaelTokairin.pdf";
-                      link.click();
-                    }}
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
+                  <span className="tagline">Bem-vindo ao meu Currículo</span>
+
+                  <h1>
+                    {`Oi! Eu sou Rafael Tokairin, `}
+                    <span className="txt-rotate">
+                      <span className="wrap">{text}</span>
+                    </span>
+                  </h1>
+
+                  <p>
+                    Sou Desenvolvedor Full-stack, mestrando e formado em Ciência
+                    da Computação pela Universidade Estadual de Londrina.
+                  </p>
+
+                  {/* BOTÃO DO CV */}
+                  <a
+                    href={`${import.meta.env.BASE_URL}curriculoRafaelTokairin.pdf`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cv-link"
                   >
-                    Baixar CV <ArrowRightCircle size={25} />
-                  </button>
-              </div>}
+                    <button className="cv-button">
+                      Ver CV <ArrowRightCircle size={25} />
+                    </button>
+                  </a>
+                </div>
+              )}
             </TrackVisibility>
           </Col>
+
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
-                </div>}
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__zoomIn" : ""
+                  }
+                >
+                  <img src={headerImg} alt="Header Img" />
+                </div>
+              )}
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
     </section>
-  )
-}
+  );
+};
