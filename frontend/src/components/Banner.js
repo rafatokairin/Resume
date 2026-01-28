@@ -64,6 +64,7 @@ export const Banner = () => {
                       link.href = "https://rafatokairin.github.io/Resume/curriculoRafaelTokairin.pdf";
                       link.target = "_blank";
                       link.rel = "noopener noreferrer";
+                      link.download = "curriculoRafaelTokairin.pdf";
                       link.click();
                     }}
                   >
