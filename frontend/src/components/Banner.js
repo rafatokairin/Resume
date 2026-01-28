@@ -61,7 +61,7 @@ export const Banner = () => {
                   <button
                     onClick={() => {
                       const link = document.createElement("a");
-                      link.href = "/curriculoRafaelTokairin.pdf";
+                      link.href = `${import.meta.env.BASE_URL}curriculoRafaelTokairin.pdf`;
                       link.download = "curriculoRafaelTokairin.pdf";
                       link.click();
                     }}
