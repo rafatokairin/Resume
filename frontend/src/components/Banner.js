@@ -59,17 +59,17 @@ export const Banner = () => {
                 <h1>{`Oi! Eu sou Rafael Tokairin,`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Dev Full-stack", "Cientista", "Mestrando" ]'><span className="wrap">{text}</span></span></h1>
                   <p>Sou Desenvolvedor Full-stack, mestrando e formado em Ciência da Computação pela Universidade Estadual de Londrina.</p>
                   <button
-                  onClick={() => {
-                    const link = document.createElement("a");
-                    link.href = "/Resume/curriculoRafaelTokairin.pdf"; // caminho relativo
-                    link.download = "curriculoRafaelTokairin.pdf";
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
-                >
-                  Baixar currículo
-                </button>
+                    onClick={() => {
+                      const link = document.createElement("a");
+                      link.href = "/Resume/curriculoRafaelTokairin.pdf"; // caminho relativo
+                      link.download = "curriculoRafaelTokairin.pdf";
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                  >
+                    Baixar CV <ArrowRightCircle size={25} />
+                  </button>
               </div>}
             </TrackVisibility>
           </Col>
