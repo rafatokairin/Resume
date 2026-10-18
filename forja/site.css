@@ -1,0 +1,27 @@
+@font-face { font-family: Archivo; font-weight: 800; font-display: swap; src: url(Archivo-800.woff2) format("woff2"); }
+@font-face { font-family: Inter; font-weight: 400; font-display: swap; src: url(Inter-400.woff2) format("woff2"); }
+@font-face { font-family: Inter; font-weight: 600; font-display: swap; src: url(Inter-600.woff2) format("woff2"); }
+:root { --brasa: #FF5B1F; --faisca: #FFB020; --carvao: #17181C; --ferro: #23252B; --aco: #34373F; --cinza: #A9ADB5; --cal: #F6F4F1; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--carvao); color: var(--cal); font: 400 17px/1.65 Inter, system-ui, sans-serif; }
+a { color: var(--faisca); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+header { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; }
+header img { width: 34px; height: auto; }
+.wordmark { font: 800 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: var(--cal); text-decoration: none; }
+h1 { font: 800 clamp(34px, 7vw, 54px)/1.08 Archivo, sans-serif; letter-spacing: -0.03em; margin: 0 0 16px; }
+h2 { font: 800 24px/1.2 Archivo, sans-serif; letter-spacing: -0.02em; margin: 40px 0 8px; }
+p, li { color: #DCDAD6; }
+.muted { color: var(--cinza); font-size: 15px; }
+.hero { padding: 24px 0 8px; }
+.hero img.glyph { width: 96px; margin-bottom: 24px; }
+.tagline { font-size: 21px; color: var(--cinza); margin: 0 0 32px; }
+.cards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin: 32px 0; }
+.card { background: var(--ferro); border: 1px solid var(--aco); border-radius: 12px; padding: 18px; }
+.card b { font: 800 18px Archivo, sans-serif; display: block; margin-bottom: 6px; color: var(--cal); }
+.btn { display: inline-block; background: var(--brasa); color: var(--carvao); font: 800 17px Archivo, sans-serif; padding: 14px 26px; border-radius: 999px; text-decoration: none; }
+footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--aco); font-size: 14px; color: var(--cinza); display: flex; gap: 18px; flex-wrap: wrap; }
+footer a { color: var(--cinza); }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--aco); vertical-align: top; }
+th { color: var(--cal); font-weight: 600; }
